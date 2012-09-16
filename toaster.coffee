@@ -8,7 +8,7 @@ toast 'src'
 	# vendors: ['vendors/x.js', 'vendors/y.js', ... ]
 
 	# => OPTIONS (optional, default values listed)
-	bare: false
+	bare: true
 	packaging: true
 	# expose: ''
 	# minify: true
