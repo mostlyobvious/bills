@@ -1,14 +1,11 @@
-(function() {
-  var LocalStorage;
+var LocalStorage;
 
-  LocalStorage = (function() {
+LocalStorage = (function() {
 
-    function LocalStorage(namespace) {
-      this.namespace = namespace;
-    }
+  function LocalStorage(namespace) {
+    this.namespace = namespace;
+  }
 
-    return LocalStorage;
+  return LocalStorage;
 
-  })();
-
-}).call(this);
+})();

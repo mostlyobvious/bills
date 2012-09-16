@@ -4,6 +4,12 @@ class TrackSpendingsUseCase
 
   start: =>
 
-class Bill
-  constructor: (@value) ->
+  addNewBill: (bill) =>
+    @bills.push(bill)
 
+  totalFromBills: =>
+    @bills.sum('value')
+
+class Bill
+  constructor: (value) ->
+    @value = Number(value)

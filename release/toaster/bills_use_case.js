@@ -1,28 +1,37 @@
-(function() {
-  var Bill, TrackSpendingsUseCase,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+var Bill, TrackSpendingsUseCase,
+  __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
-  TrackSpendingsUseCase = (function() {
+TrackSpendingsUseCase = (function() {
 
-    function TrackSpendingsUseCase() {
-      this.start = __bind(this.start, this);
-      this.bills = [];
-    }
+  function TrackSpendingsUseCase() {
+    this.totalFromBills = __bind(this.totalFromBills, this);
 
-    TrackSpendingsUseCase.prototype.start = function() {};
+    this.addNewBill = __bind(this.addNewBill, this);
 
-    return TrackSpendingsUseCase;
+    this.start = __bind(this.start, this);
+    this.bills = [];
+  }
 
-  })();
+  TrackSpendingsUseCase.prototype.start = function() {};
 
-  Bill = (function() {
+  TrackSpendingsUseCase.prototype.addNewBill = function(bill) {
+    return this.bills.push(bill);
+  };
 
-    function Bill(value) {
-      this.value = value;
-    }
+  TrackSpendingsUseCase.prototype.totalFromBills = function() {
+    return this.bills.sum('value');
+  };
 
-    return Bill;
+  return TrackSpendingsUseCase;
 
-  })();
+})();
 
-}).call(this);
+Bill = (function() {
+
+  function Bill(value) {
+    this.value = Number(value);
+  }
+
+  return Bill;
+
+})();

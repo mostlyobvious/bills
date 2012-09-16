@@ -16,17 +16,18 @@
         <input id="new-bill" placeholder="How much did you pay and what for?" autofocus autocomplete="off">
       </header>
       <section id="main">
-        <ul id="bill-list"></ul>
+        <table id="bill-list"></table>
+        Total: <span id="bill-total"></span>
       </section>
       <footer id="footer"></footer>
     </section>
 
     <script type="x-handlebars-template" id="bill-template">
-      <li>
-        <div class="view">
-          <label>{{ content }}</label>
-        </div>
-      </li>
+      <tr>
+        <td>
+          {{ content }}
+        </td>
+      </tr>
     </script>
 
     <script src="vendors/jquery-1.7.2.min.js" type="text/javascript"></script>
