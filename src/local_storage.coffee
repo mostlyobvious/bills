@@ -1,0 +1,2 @@
+class LocalStorage
+  constructor: (@namespace) ->
